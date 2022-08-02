@@ -436,3 +436,143 @@ We hope that this tutorial on "What is React" has helped you better grasp how Re
 Simplilearn's React JS Training Course will teach you the fundamentals of React, including JSX, props, state, and events, a popular online framework for creating user interfaces. Reducers, actions and the state tree are all covered in this Redux training course.
 
 Are there any questions you'd want to ask us? In case you’ve got any recommendations or questions for us, please leave them in the comments section. Our professionals will respond as soon as possible!
+What are Props in ReactJS?
+ReactJS being a component-based library, the user interface (UI) is divided into small, reusable pieces. These components might need to send data to each other in some scenarios, and passing data between the components is done by way of props. The term "props" stands for "properties" and is used for passing data from one component to another. As opposed to state in React, props are read-only. So, the data coming from a parent component can't be changed by the child component.
+
+Now, let's take a look at how to use props in a React application.
+
+Using Props in React
+We follow three steps to implement props in a React application fully. These are:
+
+Define an attribute and its value
+Pass it to child component or components by using props
+Render the props data
+Here, we have a parent component, including another child component:
+
+class Parent extends Component {  
+
+  render() {
+
+    return (
+
+      <h1>
+
+        the parent component
+
+        <Child />
+
+      </h1>
+
+    );
+
+  }
+
+}
+
+Child component:
+
+const ChildComponent = () => {  
+
+  return <p>Child 1</p>; 
+
+};
+
+class ParentComponent extends Component {  
+
+  render() {
+
+    return (
+
+      <h1>
+
+        the parent component
+
+        <Child />
+
+        <Child />
+
+        <Child />
+
+      </h1>
+
+    );
+
+  }
+
+}
+
+Full Stack Web Developer Course
+To become an expert in MEAN StackVIEW COURSEFull Stack Web Developer Course
+Here the component will output the same string multiple times, but we can also assign a different string to each output while calling the child component. Let's do that using the following steps:
+
+1st Step: Defining Attribute and Data
+We can assign data to React components while calling them in this way:
+
+<Child attr1={value} attr2={value}/>
+In our case, we will name the attribute as text and assign the string to it:
+
+<Child text={“I’m the 1st child”} />
+Now that we've added the data, we need to pass the data through props.
+
+2nd Step: Passing Data using Props
+Now let's take the "Child 1" string and pass it by using props. Passing props is simple, and we can add props like we pass an argument to a function.
+
+const Child = (props) => {  
+
+  return <p>Child 1</p>; 
+
+};
+
+"Props are arguments passed into React components."—w3school
+
+Final Step: Rendering Props Data
+Now we need to render props since we have already passed it to the child component as an argument:
+
+const Child = (props) => {  
+
+  return <p>{props.text}</p>; 
+
+};
+
+class Parent extends Component {  
+
+  render() {
+
+    return (
+
+      <h1>
+
+        the parent component.
+
+        <Child text={"Child 1"} />
+
+        <Child text={"Child 2"} />
+
+        <Child text={"Child 3"} />
+
+      </h1>
+
+    );
+
+  }
+
+}
+
+Each child component now renders its prop data instead of just printing the same thing every time it's called. This is how we pass props from one component to another and enable the dynamicity of a React application.
+
+Master the fundamentals of React—an important web framework for developing user interfaces—including JSX, props, state, and events with the React.js Training Course.
+State vs. Props
+Let's go through the fundamental differences between state and props:
+
+State	Props
+Use Case	State is used to store the data of the components that have to be rendered to the view	Props are used to pass data and event handlers to the children components
+Mutability	State holds the data and can change over time	Props are immutable—once set, props can't be changed
+Component	State can only be used in class components	Props can be used in both functional and class components
+Updation	Event handlers generally update state	The parent component sets props for the children components
+And with that, we are now familiar with props, one of the most important concepts of React.
+
+Summary
+Props stand for properties
+Props are passed to components like function arguments
+Props can be passed to components only via parent to child
+Props data is immutable (read-only)
